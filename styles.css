@@ -1,0 +1,78 @@
+/* Full-page black background with extra large gray polka hearts */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: black;
+  background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
+  background-size: 60px 60px;
+}
+
+/* Centering the main card */
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Light pink card with small pink polka dots */
+.center-box {
+  background-color: #fce6f9;
+  background-image: radial-gradient(#fcdff9 8%, transparent 8%);
+  background-size: 40px 40px;
+  padding: 40px 80px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Logo image */
+.logo-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+/* Nav styling for buttons as images side by side */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* Nav links styled as buttons with no extra background/borders */
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Nav images (your PNG buttons) */
+.nav-img {
+  max-width: 120px;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.nav-img:hover {
+  opacity: 0.9;               /* slight opacity change */
+  transform: scale(1.05);    /* slightly enlarge */
+  box-shadow: 0 0 8px #6c63ff; /* subtle purple glow */
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+body {
+  cursor: url('path-to-image.png'), auto;
+}

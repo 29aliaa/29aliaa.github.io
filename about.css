@@ -1,0 +1,83 @@
+/* Overall page */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+/* Two-column layout */
+.about-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Pink left panel */
+.left-panel {
+  background-color: #fce6f9;
+  width: 66%;
+  padding: 40px 30px;
+  padding-top: 20px; /* increase this to push content down */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-img {
+  width: 50%;       /* make it stretch full width */
+  height: auto;      /* keep aspect ratio */
+  display: block;    /* remove any inline spacing */
+}
+/* Profile image */
+.profile-img {
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+/* Bio text */
+.bio-text {
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Collage right panel */
+.collage-panel {
+  width: 60%;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Collage images */
+.collage-img {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+/* Optional floating animation */
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+body {
+  font-family: 'EB Garamond', serif;
+}
+body {
+  cursor: url('path-to-image.png'), auto;
+}
