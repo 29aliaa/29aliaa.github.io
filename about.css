@@ -16,7 +16,7 @@ body {
 /* Pink left panel */
 .left-panel {
   background-color: #fce6f9;
-  width: 66%;
+  width: 45%;
   padding: 40px 30px;
   padding-top: 20px; /* increase this to push content down */
   padding-left: 20px;
@@ -79,5 +79,29 @@ body {
   font-family: 'EB Garamond', serif;
 }
 body {
+  cursor: url('path-to-image.png'), auto;
+}
+.home-button {
+  position: fixed;
+  top: 10px;           /* distance from the top edge */
+  left: 50%;           /* center horizontally */
+  transform: translateX(-50%); /* adjust for true center */
+  z-index: 1000;       /* keep it above everything else */
+}
+
+.home-button img {
+  width: 120px;         /* adjust for desired size */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.home-button img:hover {
+  transform: scale(1.1);
+}
+button,
+a,
+.nav-button,
+.nav-img,
+.home-button img {
   cursor: url('path-to-image.png'), auto;
 }
