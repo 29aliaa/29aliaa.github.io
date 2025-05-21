@@ -121,3 +121,6 @@ body,
 body * {
   cursor: url('path-to-image.png'), auto;
 }
+*, *::before, *::after {
+  cursor: inherit;
+}

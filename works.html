@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Works – Alia Serene</title>
+  <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="stylesheet" href="works.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Add margin between your three zine Swipers */
+    .zine-swiper-1, .zine-swiper-2, .zine-swiper-3 {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
   <a href="index.html" class="home-button">
@@ -40,7 +48,7 @@
         <div class="gallery-grid">
           <img src="sewing1.png" alt="Sewing Project 1" class="gallery-img" />
           <img src="sewing1-2.png" alt="Sewing Project 1.2" class="gallery-img" />
-           <img src="sewing6.png" alt="Sewing Project 6.1" class="gallery-img" />
+          <img src="sewing6.png" alt="Sewing Project 6.1" class="gallery-img" />
           <img src="sewing6-2.png" alt="Sewing Project 6.2" class="gallery-img" />
           <img src="sewing7.png" alt="Sewing Project 7.1" class="gallery-img" />
           <img src="sewing7-2.png" alt="Sewing Project 7.2" class="gallery-img" />
@@ -52,20 +60,42 @@
           <img src="sewing3-2.png" alt="Sewing Project 3.2" class="gallery-img" /> 
           <img src="sewing8.png" alt="Sewing Project 8.1" class="gallery-img" />
           <img src="sewing8-2.png" alt="Sewing Project 8.2" class="gallery-img" /> 
-    
-    
-
-
         </div>
       </div>
 
       <!-- Zines Gallery -->
       <div id="zines-gallery" style="margin-top: 60px;">
         <img src="zines-button.png" alt="Zines" class="section-header-img" />
-        <div class="gallery-grid">
-          <!-- Add zines images here -->
-          <img src="zine1.png" alt="Zine Project 1" class="gallery-img" />
-          <img src="zine2.png" alt="Zine Project 2" class="gallery-img" />
+
+        <!-- Zine 1 Swiper -->
+        <div class="swiper zine-swiper-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="zine1-1.png" alt="Zine 1 Page 1" /></div>
+            <div class="swiper-slide"><img src="zine1-2.png" alt="Zine 1 Page 2" /></div>
+            <div class="swiper-slide"><img src="zine1-3.png" alt="Zine 1 Page 3" /></div>
+          </div>
+          <div class="swiper-button-prev zine-prev-1"></div>
+          <div class="swiper-button-next zine-next-1"></div>
+        </div>
+
+        <!-- Zine 2 Swiper -->
+        <div class="swiper zine-swiper-2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="zine2-1.png" alt="Zine 2 Page 1" /></div>
+            <div class="swiper-slide"><img src="zine2-2.png" alt="Zine 2 Page 2" /></div>
+          </div>
+          <div class="swiper-button-prev zine-prev-2"></div>
+          <div class="swiper-button-next zine-next-2"></div>
+        </div>
+
+        <!-- Zine 3 Swiper -->
+        <div class="swiper zine-swiper-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="zine3-1.png" alt="Zine 3 Page 1" /></div>
+            <div class="swiper-slide"><img src="zine3-2.png" alt="Zine 3 Page 2" /></div>
+          </div>
+          <div class="swiper-button-prev zine-prev-3"></div>
+          <div class="swiper-button-next zine-next-3"></div>
         </div>
       </div>
 
@@ -73,7 +103,6 @@
       <div id="writing-gallery" style="margin-top: 60px;">
         <img src="words-button.png" alt="Writing" class="section-header-img" />
         <div class="gallery-grid">
-          <!-- Add writing images or thumbnails here -->
           <img src="writing1.png" alt="Writing Project 1" class="gallery-img" />
           <img src="writing2.png" alt="Writing Project 2" class="gallery-img" />
         </div>
@@ -83,7 +112,6 @@
       <div id="calligraphy-gallery" style="margin-top: 60px;">
         <img src="calligraphy-button.png" alt="Calligraphy" class="section-header-img" />
         <div class="gallery-grid">
-          <!-- Add calligraphy images here -->
           <img src="calligraphy1.png" alt="Calligraphy Project 1" class="gallery-img" />
           <img src="calligraphy2.png" alt="Calligraphy Project 2" class="gallery-img" />
         </div>
@@ -93,7 +121,6 @@
       <div id="graphic-design-gallery" style="margin-top: 60px;">
         <img src="graphics-button.png" alt="Graphic Design" class="section-header-img" />
         <div class="gallery-grid">
-          <!-- Add graphic design images here -->
           <img src="graphic1.png" alt="Graphic Design Project 1" class="gallery-img" />
           <img src="graphic2.png" alt="Graphic Design Project 2" class="gallery-img" />
         </div>
@@ -108,6 +135,40 @@
 
     </div> <!-- end of .center-box -->
   </div> <!-- end of .outer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.zine-swiper-1', {
+        loop: true,
+        navigation: {
+          nextEl: '.zine-next-1',
+          prevEl: '.zine-prev-1',
+        },
+        spaceBetween: 20,
+        slidesPerView: 1,
+      });
+
+      new Swiper('.zine-swiper-2', {
+        loop: true,
+        navigation: {
+          nextEl: '.zine-next-2',
+          prevEl: '.zine-prev-2',
+        },
+        spaceBetween: 20,
+        slidesPerView: 1,
+      });
+
+      new Swiper('.zine-swiper-3', {
+        loop: true,
+        navigation: {
+          nextEl: '.zine-next-3',
+          prevEl: '.zine-prev-3',
+        },
+        spaceBetween: 20,
+        slidesPerView: 1,
+      });
+    });
+  </script>
 </body>
 </html>
-<link rel="icon" href="/favicon.png" type="image/png" />
