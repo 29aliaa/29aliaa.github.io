@@ -27,13 +27,16 @@
   </div>
   <script>
   const box = document.querySelector('.center-box');
+  const movementEnabled = false; // change to true to enable movement
 
-  document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  if (movementEnabled) {
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
-    box.style.transform = `translate(${x}px, ${y}px)`;
-  });
+      box.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
 </script>
 </body>
 </html>
