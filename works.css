@@ -6,6 +6,18 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: white; /* so text (if any) is visible */
+  cursor: url('path-to-image.png'), auto;  /* <-- Add cursor here */
+}
+
+/* Keep your other styles as is */
+
+button,
+a,
+.nav-button,
+.nav-img,
+.home-button img {
+  /* You can keep this if you want a fallback cursor or different */
+  cursor: url('path-to-image.png'), auto;
 }
 
 .outer {
