@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fce6f9;
+  background-color: #000000;
   font-family: sans-serif;
 }
 
@@ -103,5 +103,14 @@ a,
 .nav-button,
 .nav-img,
 .home-button img {
+  cursor: url('path-to-image.png'), auto;
+}
+*,
+*::before,
+*::after {
+  cursor: url('path-to-image.png'), auto !important;
+}
+body,
+body * {
   cursor: url('path-to-image.png'), auto;
 }

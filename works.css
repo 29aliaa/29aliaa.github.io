@@ -1,27 +1,27 @@
-/* works.css */
+/* works.css updated */
 
+/* Body and general */
 body {
   background-color: #fce6f9;
-  background-image: none; /* no polka dots or other patterns */
+  background-image: none;
   margin: 0;
   font-family: Arial, sans-serif;
-  color: white; /* so text (if any) is visible */
-  cursor: url('path-to-image.png'), auto;  /* <-- Add cursor here */
+  color: white;
+  cursor: url('path-to-image.png'), auto;
 }
 
-/* Keep your other styles as is */
-
+/* Custom cursor for interactive elements */
 button,
 a,
 .nav-button,
 .nav-img,
-.home-button img {
-  /* You can keep this if you want a fallback cursor or different */
-  cursor: url('path-to-image.png'), auto;
+.home-button img,
+.gallery-img {
+  cursor: url('path-to-image.png'), pointer;
 }
 
 .outer {
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,12 +29,13 @@ a,
 }
 
 .center-box {
-  margin-top: 140px; /* increase this number to move it further down */
+  margin-top: 140px;
   width: 90%;
   max-width: 355%;
   text-align: center;
 }
 
+/* Logo */
 .logo-img {
   max-width: 300px;
   height: auto;
@@ -42,14 +43,24 @@ a,
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: transform 0.3s ease;
 }
 
+.logo-img:hover {
+  transform: scale(1.02);
+}
+
+/* Buttons */
 .buttons {
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 
 .buttons button {
-  background-color: #ff69b4; /* pink */
+  background-color: #ff69b4;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -63,16 +74,18 @@ a,
 .buttons button:hover {
   background-color: #ff85c1;
 }
+
+/* Home button */
 .home-button {
   position: fixed;
-  top: 10px;           /* distance from the top edge */
-  left: 50%;           /* center horizontally */
-  transform: translateX(-50%); /* adjust for true center */
-  z-index: 1000;       /* keep it above everything else */
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .home-button img {
-  width: 120px;         /* adjust for desired size */
+  width: 120px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -80,53 +93,135 @@ a,
 .home-button img:hover {
   transform: scale(1.1);
 }
-button,
-a,
-.nav-button,
-.nav-img,
-.home-button img {
-  cursor: url('path-to-image.png'), auto;
-}
-.logo-img:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
-.buttons {
-  margin-top: 30px;
+
+/* Image buttons */
+.image-button {
+  width: 170px;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  /* Removed box-shadow for cleaner look */
+  transition: transform 0.2s ease;
 }
 
-.image-button {
-  background-color: white;
-  padding: 10px;
-  border-radius: 12px;
-  display: inline-block;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.image-button img {
+  width: 150px;
+  height: auto;
+  display: block;
 }
 
 .image-button:hover {
   transform: scale(1.05);
 }
 
-.image-button img {
-  width: 150px;      /* Set a fixed width */
-  height: auto;      /* Maintain aspect ratio */
-  display: block;
-}
-.image-button {
-  width: 170px;        /* slightly bigger than image width to add padding */
-  height: 100px;       /* fixed height */
-  padding: 10px;
-  box-sizing: border-box; /* includes padding in width/height */
+/* Gallery container */
+#gallery-container,
+.gallery-grid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Gallery images and thumbnails */
+/* Remove box shadows and background */
+/* Increase size and keep aspect ratio */
+/* Limit max width/height to avoid huge images */
+
+.thumbnail,
+.gallery-img {
+  width: 380px;         /* bigger size */
+  height: auto;         /* maintain natural ratio */
+  border-radius: 0;     /* no rounding */
+  box-shadow: none;     /* no shadow */
+  background: none;     /* no background */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  max-width: 380px;
+  max-height: 380px;
+  object-fit: contain;  /* scale image to fit box without distortion */
+}
+
+.thumbnail:hover,
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  z-index: 1500;
+  flex-direction: column;
+  padding: 10px; /* a bit of breathing room */
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal img,
+#modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 4px; /* subtle rounding */
+  box-shadow: none;   /* remove shadow */
+}
+
+/* Close button */
+#modal-close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1600;
+  transition: color 0.3s ease;
+}
+
+#modal-close:hover {
+  color: #ff69b4;
+}
+#modal-caption {
+  color: white;
+  margin-top: 12px;
+  font-size: 18px;
+  text-align: center;
+}
+.section-header-img {
+  display: block;
+  margin: 40px auto 20px auto;
+  max-width: 200px;
+  height: auto;
+}
+.thumbnail {
+  width: 280px;        
+  height: auto;        
+  max-width: 280px;    /* don't exceed this */
+  max-height: 280px;   /* also cap height */
+  object-fit: contain; 
+}
+*,
+*::before,
+*::after {
+  cursor: url('path-to-image.png'), auto !important;
+}
+body,
+body * {
+  cursor: url('path-to-image.png'), auto;
 }
