@@ -14,13 +14,9 @@ flex-wrap: wrap;
 
 /* Pink left panel */
 .left-panel {
-  background-color: #000000;
   width: 40%;
-  padding: 40px 30px;
-  padding-top: 80px; /* increase this to push content down */
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+  /* remove background-color from here */
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
@@ -28,6 +24,21 @@ flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
+/* Only paragraph text box gets the black background */
+.text-box {
+  background-color: #000000;
+  padding: 40px 30px;
+  padding-top: 80px; /* if you want more top padding */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  color: white; /* so text is visible on black */
+  width: 100%;  /* fill container */
+  box-sizing: border-box;
+}
+
 .about-img {
   width: 50%;
   height: auto;
