@@ -10,7 +10,6 @@ body {
 .about-container {
   display: flex;
   height: 100vh;
-  overflow: hidden;
 }
 
 /* Pink left panel */
@@ -55,7 +54,6 @@ body {
   width: 60%;
   position: relative;
   padding: 20px;
-  overflow: hidden;
 }
 
 /* Collage images */
