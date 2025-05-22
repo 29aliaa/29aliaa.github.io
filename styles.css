@@ -1,7 +1,7 @@
 /* Full-page black background with large pink polka hearts */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'EB Garamond', serif;
   background-color: black;
   background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
   background-size: 60px 60px;

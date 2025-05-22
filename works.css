@@ -342,19 +342,6 @@ img, img:hover, img:active, img:focus {
       max-width: 100;
   height: 5000%
 }
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.85);
-  text-align: center;
-}
 
 #modal-img {
   max-width: 90%;
@@ -363,12 +350,23 @@ img, img:hover, img:active, img:focus {
   margin-top: 30px;
 }
 
-#modal-close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
+.writing-text h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+    color: #000000;           /* black text */
+    font-family: 'EB Garamond', serif;  /* 👈 Add this line */
+
+}
+
+.writing-text p {
+  margin: 0.25rem 0;
+    color: #000000;           /* black text */
+    font-family: 'EB Garamond', serif;  /* 👈 Add this line */
+
+}
+
+.link-icon img {
+  width: 15%;
+  height: auto;
   cursor: pointer;
 }
