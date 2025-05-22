@@ -131,11 +131,15 @@ body * {
   .about-container {
     flex-direction: column;
     height: auto;
+    
   }
 
   .left-panel,
   .collage-panel {
     width: 100%;
+    min-height: 300px;
+    background-size: contain;
+    background-position: center top;
     border-radius: 0; /* Optional: remove rounded corners on mobile */
   }
 
@@ -154,10 +158,4 @@ body * {
     padding: 10px;
   }
 
-  .collage-panel {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
-    min-height: 300px;
-  }
 }
