@@ -233,3 +233,90 @@ html, body {
 img {
   cursor: url('path-to-image.png'), auto;
 }
+.zine-block {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.zine-block h3 {
+  color: #ff69b4;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.zine-swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.zine-swiper .swiper-slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Hide default arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+/* Base styles for all zine nav arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next,
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+  position: absolute; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Custom left arrows */
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+  background-image: url('arrow-left.png');
+  left: -75px;
+}
+
+/* Custom right arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next {
+  background-image: url('arrow-right.png');
+  right: -75px;
+}
+
+/* Swiper container styling */
+.swiper {
+  position: relative;
+  padding: 0 60px; /* space for arrows */
+  overflow: visible; /* prevent horizontal scroll */
+}
+
+/* Allow swiper-wrapper overflow to show arrows outside */
+.swiper-wrapper {
+  overflow: visible;
+}
+.zine-swiper-1,
+.zine-swiper-2,
+.zine-swiper-3,
+.zine-swiper-1 > *,
+.zine-swiper-2 > *,
+.zine-swiper-3 > * {
+  overflow: visible !important;
+}
+/* Custom cursor everywhere */
+html, body, * , *::before, *::after,
+button, button:hover, button:active, button:focus,
+a, a:hover, a:active, a:focus,
+img, img:hover, img:active, img:focus {
+  cursor: url('path-to-image.png'), auto !important;
+}

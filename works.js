@@ -81,3 +81,20 @@ document.querySelectorAll('.buttons a').forEach(link => {
   });
 });
 img.style.cursor = 'pointer';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const swiperElements = document.querySelectorAll('.zine-swiper');
+
+  swiperElements.forEach((el, index) => {
+    const paginationEl = el.querySelector('.swiper-pagination');
+    paginationEl.classList.add('swiper-pagination-' + index);
+
+    new Swiper(el, {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination-' + index,
+        clickable: true,
+      },
+    });
+  });
+});
