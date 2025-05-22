@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Alia Attar – Artist & Designer</title>
 <meta name="description" content="Portfolio of Alia Attar, also known as Alia Serene or 29alia. Explore work in sewing, zines, calligraphy, design, and more!">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Works – Alia Serene</title>
-<link rel="icon" href="/favicon.png" type="image/png" />
-<link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="works.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     /* Add margin between your three zine Swipers */
@@ -164,11 +163,6 @@
   <img src="calligraphy1.png" class="gallery-img" onclick="enlarge(this)" />
   <img src="calligraphy2.png" class="gallery-img" onclick="enlarge(this)" />
 </div>
-
-<!-- Modal -->
-<div id="img-modal" class="modal">
-  <span id="modal-close" onclick="closeModal()">×</span>
-</div>
 </div>
 
       <!-- Graphic Design Gallery -->
@@ -192,18 +186,26 @@
         </div>
       </div>
 
-      <!-- Modal for viewing full images -->
-      <div id="modal" class="modal" style="display:none;">
-        <span id="modal-close">&times;</span>
-        <img id="modal-img" src="" alt="" />
-        <div id="modal-caption"></div>
-      </div>
+     <!-- Modal for viewing full images -->
+<div id="modal" class="modal" style="display:none;">
+  <span id="modal-close" onclick="closeModal()">&times;</span>
+  <img id="modal-img" src="" alt="" />
+  <div id="modal-caption"></div>
+</div>
 
-    </div> <!-- end of .center-box -->
-  </div> <!-- end of .outer -->
+<script>
+function enlarge(imgElement) {
+  const modal = document.getElementById("modal");        // fix id here
+  const modalImg = document.getElementById("modal-img");
+  modal.style.display = "block";
+  modalImg.src = imgElement.src;
+}
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
+function closeModal() {
+  document.getElementById("modal").style.display = "none";  // fix id here
+}
+</script>
+
     document.addEventListener('DOMContentLoaded', () => {
       new Swiper('.zine-swiper-1', {
         loop: true,
@@ -238,18 +240,5 @@
   </script>
 <!-- Your custom JavaScript -->
 <script src="works.js"></script>
-<script>
-function enlarge(imgElement) {
-  const modal = document.getElementById("img-modal");
-  const modalImg = document.getElementById("modal-img");
-  modal.style.display = "block";
-  modalImg.src = imgElement.src;
-}
-
-function closeModal() {
-  document.getElementById("img-modal").style.display = "none";
-}
-</script>
-
 </body>
 </html>
