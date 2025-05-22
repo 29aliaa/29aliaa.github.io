@@ -15,7 +15,7 @@ body {
 /* Pink left panel */
 .left-panel {
   background-color: #fce6f9;
-  width: 45%;
+  width: 40%;
   padding: 40px 30px;
   padding-top: 20px; /* increase this to push content down */
   padding-left: 20px;
@@ -29,9 +29,11 @@ body {
   justify-content: center;
 }
 .about-img {
-  width: 50%;       /* make it stretch full width */
-  height: auto;      /* keep aspect ratio */
-  display: block;    /* remove any inline spacing */
+  width: 25%;
+  height: auto;
+  display: block;   /* removes inline spacing */
+  float: left;      /* ensures it sticks to the left */
+  margin-right: 20px; /* optional: space between image and text */
 }
 /* Profile image */
 .profile-img {
