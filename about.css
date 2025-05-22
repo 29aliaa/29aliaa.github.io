@@ -188,3 +188,44 @@ body * {
     width: 10px; /* smaller size for mobile */
   }
 }
+/* Hide mobile header by default */
+.mobile-header {
+  display: none;
+}
+
+/* Mobile-only top bar styles */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #000; /* Black background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-home-icon {
+    width: 40px; /* Smaller home button */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-home-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Push content down to avoid overlap */
+  body {
+    padding-top: 60px;
+  }
+
+  /* Hide existing centered home button on mobile */
+  .home-button {
+    display: none;
+  }
+}

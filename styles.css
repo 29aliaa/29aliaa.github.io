@@ -72,9 +72,10 @@ nav {
 }
 
 .nav-img:hover {
-  opacity: 0.9;
+  opacity: 2;
   transform: scale(1.05);
-  box-shadow: 0 0 8px #6c63ff;
+  box-shadow: 0 0 8px #000000;
+  border-radius: 12px;
   transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .home-button {
