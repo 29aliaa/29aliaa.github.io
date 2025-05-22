@@ -29,7 +29,7 @@ body {
   justify-content: center;
 }
 .about-img {
-  width: 25%;
+  width: 50%;
   height: auto;
   display: block;   /* removes inline spacing */
   float: left;      /* ensures it sticks to the left */
@@ -116,4 +116,16 @@ body * {
 }
 *, *::before, *::after {
   cursor: inherit;
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 80%; /* or 100% if you want it to span full screen */
+    margin-bottom: 20px;
+  }
 }
