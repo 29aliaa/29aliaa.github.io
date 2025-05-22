@@ -170,3 +170,9 @@ body * {
   }
 
 }
+@media (max-width: 768px) {
+  .home-button {
+    left: 10px;
+    transform: none; /* remove horizontal centering */
+  }
+}
