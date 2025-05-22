@@ -185,6 +185,6 @@ body * {
 /* On mobile devices (max-width 600px), make it smaller */
 @media (max-width: 600px) {
   .home-icon {
-    width: 25px; /* smaller size for mobile */
+    width: 15px; /* smaller size for mobile */
   }
 }
