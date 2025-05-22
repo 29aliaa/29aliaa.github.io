@@ -9,12 +9,12 @@ body {
 /* Two-column layout */
 .about-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Pink left panel */
 .left-panel {
-  background-color: #fce6f9;
+  background-color: #000000;
   width: 40%;
   padding: 40px 30px;
   padding-top: 20px; /* increase this to push content down */
@@ -45,7 +45,7 @@ body {
 
 /* Bio text */
 .bio-text {
-  color: #000000;
+  color: #ffffff;
   font-size: 16px;
   line-height: 1.6;
   text-align: center;
@@ -117,15 +117,47 @@ body * {
 *, *::before, *::after {
   cursor: inherit;
 }
+.collage-panel {
+  width: 60%;
+  position: relative;
+  padding: 0;
+  background-color: rgb(252, 197, 234);
+  background-image: url('your-collage.png'); /* <— your full-panel PNG */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    height: auto;
+  }
+
+  .left-panel,
+  .collage-panel {
+    width: 100%;
+    border-radius: 0; /* Optional: remove rounded corners on mobile */
   }
 
   .about-img {
-    width: 80%; /* or 100% if you want it to span full screen */
+    width: 80%;
     margin-bottom: 20px;
+  }
+
+  .profile-img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .bio-text {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .collage-panel {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 300px;
   }
 }
