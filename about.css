@@ -210,7 +210,7 @@ body * {
   }
 
   .mobile-home-icon {
-    width: 40px; /* Smaller home button */
+    width: 60px; /* Smaller home button */
     height: auto;
     transition: transform 0.3s ease;
   }
