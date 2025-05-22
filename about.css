@@ -176,3 +176,15 @@ body * {
     transform: none; /* remove horizontal centering */
   }
 }
+/* Default size (for desktop and larger screens) */
+.home-icon {
+  width: 40px; /* or whatever your default size is */
+  height: auto; /* maintain aspect ratio */
+}
+
+/* On mobile devices (max-width 600px), make it smaller */
+@media (max-width: 600px) {
+  .home-icon {
+    width: 25px; /* smaller size for mobile */
+  }
+}

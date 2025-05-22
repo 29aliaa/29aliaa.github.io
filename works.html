@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Works – Alia Serene</title>
 <link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="works.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
@@ -167,7 +168,6 @@
 <!-- Modal -->
 <div id="img-modal" class="modal">
   <span id="modal-close" onclick="closeModal()">×</span>
-  <img id="modal-img" />
 </div>
 </div>
 
@@ -238,8 +238,6 @@
   </script>
 <!-- Your custom JavaScript -->
 <script src="works.js"></script>
-</body>
-</html>
 <script>
 function enlarge(imgElement) {
   const modal = document.getElementById("img-modal");
@@ -252,3 +250,6 @@ function closeModal() {
   document.getElementById("img-modal").style.display = "none";
 }
 </script>
+
+</body>
+</html>
