@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Alia Attar – Artist & Designer</title>
-<meta name="description" content="Portfolio of Alia Attar, also known as Alia Serene or 29alia. Explore work in sewing, zines, calligraphy, design, and more!">
+  <title>Alia Attar – Artist & Designer</title>
+  <meta name="description" content="Portfolio of Alia Attar, also known as Alia Serene or 29alia. Explore work in sewing, zines, calligraphy, design, and more!">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About – Alia Serene</title>
-<link rel="icon" type="image/png" href="/favicon.png" />
-
-
-  <!-- EB Garamond font from Google Fonts -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-
-  <!-- Your custom CSS for this page -->
   <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-    <a href="index.html" class="home-button">
-     <img src="home-button.png" alt="Home" />
-    </a>
+    <div class="home-button">
+  <img src="..." class="home-icon" />
+</div>
+  <a href="index.html" class="home-button">
+    <img src="home-button.png" alt="Home" />
+  </a>
+
   <div class="about-container">
     <!-- Pink box on the left -->
     <div class="left-panel">
-         <img src="about-me.png" alt="Header Decoration" class="about-img" />
+      <img src="about-me.png" alt="Header Decoration" class="about-img" />
       <img src="your-photo.jpeg" alt="Alia Serene Portrait" class="profile-img" />
-      <div class="bio-text">
-        <p>Hi!!! My name is Alia—you may know me as Alia Serene, Alia Attar, or 29aliaa!</p>
-            
-            
-           <p> I'm an NYU student concentrating in education, history, and data science with a minor in Middle Eastern Studies. I'm from Lake Forest, Illinois (a small suburb north of Chicago) and a proud Syrian-American. As an artist, I love creating, designing, learning, teaching, and experimenting! Thank you for checking out my digital little world—I hope you leave finding something you love and feeling inspired<3 </p>
 
-            
+      <div class="bio-text">
+        <!-- Typewriter text -->
+        <p id="typewriter"></p>
+
+        <!-- Regular bio continues here -->
+        <p>
+          Originally from the Chicagoland area, I'm an NYU student concentrating in education, history, and data science with a minor in Middle Eastern Studies. Also, I have to mention that I'm Syrian-American!!! As an artist, I love creating, designing, learning, teaching, and experimenting! Thank you for checking out my digital little world—I hope you leave finding something you love and feeling inspired<3 </p>
       </div>
     </div>
 
-<div class="collage-panel"></div>
+    <div class="collage-panel"></div>
   </div>
+
+  <!-- JavaScript for Typewriter Effect -->
+  <script>
+    const text = "Hi!!! My name is Alia—you may know me as Alia Serene, Alia Attar, or 29aliaa!";
+    let i = 0;
+    const speed = 50;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
