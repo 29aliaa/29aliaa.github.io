@@ -407,6 +407,11 @@ img, img:hover, img:active, img:focus {
   height: auto;
 }
 
+.link-icon img[src="chinchilla.png"] {
+  width: 80px; /* or whatever size you want */
+  height: auto;
+}
+
 .link-icon img[src="deer.png"] {
   width: 160px; /* or whatever size you want */
   height: auto;
