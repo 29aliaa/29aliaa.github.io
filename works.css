@@ -370,3 +370,74 @@ img, img:hover, img:active, img:focus {
   height: auto;
   cursor: pointer;
 }
+.writing-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+}
+
+.link-icon img {
+  width: 100x;
+  height: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.writing-text {
+  max-width: 600px;
+}
+
+
+.link-icon img[src="ladybug.png"] {
+  width: 100px; /* or whatever size you want */
+  height: auto;
+}
+
+
+.link-icon img[src="swan.png"] {
+  width: 210px; /* or whatever size you want */
+  height: auto;
+}
+
+.link-icon img[src="lamb.png"] {
+  width: 120px; /* or whatever size you want */
+  height: auto;
+}
+
+.link-icon img[src="deer.png"] {
+  width: 160px; /* or whatever size you want */
+  height: auto;
+}
+.link-icon img[src="doggy.png"] {
+  width: 160px; /* or whatever size you want */
+  height: auto;
+}
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.writing-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.link-icon img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.link-icon img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.1);
+}
+
