@@ -23,6 +23,7 @@ html, body {
   cursor: url('path-to-image.png'), auto;
 }
 
+
 *, *::before, *::after {
   cursor: inherit;
 }
@@ -36,7 +37,7 @@ html, body {
 }
 
 .center-box {
-  margin-top: 140px;
+  margin-top: 0px;
   width: 90%;
   max-width: 1200px; 
   text-align: center;
@@ -84,16 +85,17 @@ html, body {
 
 /* Home button */
 .home-button {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 10px; /* Adjust this number to control space under the button */
+  width: fit-content;
 }
 
 .home-button img {
-  width: 120px;
+  width: 130px;
   height: auto;
+  margin:0px;
   transition: transform 0.3s ease;
 }
 
@@ -446,3 +448,64 @@ img, img:hover, img:active, img:focus {
   filter: brightness(1.1);
 }
 
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+
+.floating-buttons {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Make the button container transparent and remove padding */
+.button {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Control image size here */
+.button-icon {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.button-icon:hover {
+  transform: scale(1.1); /* Optional hover effect */
+}
+
+.button {
+  background-color: #ffffff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #db2777;
+}

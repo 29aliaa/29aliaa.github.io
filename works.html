@@ -17,9 +17,8 @@
     }
   </style>
 </head>
-<body>
-  <a href="index.html" class="home-button">
-    <img src="home-button.png" alt="Home" />
+ <a href="index.html" class="home-button">
+  <img src="home-button.png" class="home-icon" alt="Home" />
   </a>
 
   <div class="outer">
@@ -341,6 +340,29 @@ function closeModal() {
     modal.onclick = () => modal.remove();
     document.body.appendChild(modal);
   }
+</script>
+<script>
+  // Show top nav on section navigation
+  document.querySelectorAll('.image-button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.getElementById('top-nav').style.display = 'flex';
+    });
+  });
+
+  // Smooth scroll to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<!-- Add this at the bottom of <body> in all pages -->
+<div id="floating-buttons" class="floating-buttons">
+  <a href="index.html" class="button">
+    <img src="home.png" alt="Home" class="button-icon" />
+  </a>
+  <button onclick="scrollToTop()" class="button">
+    <img src="top.png" alt="Back to Top" class="button-icon" />
+  </button>
+</div>
 </script>
 </body>
 </html>
