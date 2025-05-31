@@ -606,7 +606,7 @@ overflow: visible !important;
   width: 100%;
 }
 
-.swiper {
+.swiper { /*this is what made the sliders work!!!!*/
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -634,3 +634,32 @@ overflow: visible !important;
     transform: scale(0.7);
   }
 }
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50%;
+    transform: translateY(-50%);
+    left: -50px; /* adjust as needed */
+    right: -50px;
+  }
+
+  .swiper-button-next {
+    right: 5px;
+    left: auto;
+  }
+}
+/* Prevent horizontal scroll site-wide */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Stack writing entries on small screens */
+@media (max-width: 768px) {
+  .writing-entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
