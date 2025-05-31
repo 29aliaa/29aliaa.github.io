@@ -1,5 +1,3 @@
-/* works.css updated for st-pageflip */
-
 /* Body and general */
 body {
   background-color: #fce6f9;
@@ -451,12 +449,6 @@ right: -100px;
 overflow: visible;
 }
 
-.swiper {
-  width: 80%; /* or whatever smaller value you want */
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto;
-}
 
 .swiper-slide img {
   width: 100%;
@@ -464,11 +456,21 @@ overflow: visible;
   display: block;
 }
 
+.swiper-slide {
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
 
-.swiper {
-width: 100%;
-max-width: 600px;
-margin: 30px auto;
+.zine-swiper-1 .swiper-slide {
+  width: 100% !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  overflow-x: hidden;
+  align-items: center;
 }
 
 
@@ -479,6 +481,18 @@ display: block;
 border-radius: 10px;
 }
 
+.swiper-wrapper-container {
+  position: relative;
+  overflow: visible; /* ✅ allows arrows to show */
+}
+
+.swiper.zine-swiper {
+  overflow: hidden; /* ✅ only hides inner slides, not arrows */
+}
+
+body {
+  overflow-x: hidden;
+}
 
 img {
 cursor: url('path-to-image.png'), auto;
@@ -553,10 +567,14 @@ right: -100px;
 
 /* Swiper container styling */
 .swiper {
-position: relative;
-padding: 0 60px; /* space for arrows */
-overflow: visible; /* prevent horizontal scroll */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
 }
+
+
 
 
 /* Allow swiper-wrapper overflow to show arrows outside */
@@ -570,4 +588,49 @@ overflow: visible;
 .zine-swiper-2 > *,
 .zine-swiper-3 > * {
 overflow: visible !important;
+}
+
+#works-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 20px;
+}
+
+.zine-container,
+.sewing-container,
+.writing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .section-header-img {
+    width: 80%;
+  }
+
+  .subheader-desc {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.7);
+  }
 }

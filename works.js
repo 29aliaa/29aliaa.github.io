@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    allowTouchMove: false,
     navigation: {
       nextEl: '.zine-next-1',
       prevEl: '.zine-prev-1',
