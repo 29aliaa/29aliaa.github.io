@@ -1,16 +1,10 @@
-// Your gallery data - update image paths & alt text as needed
 const galleries = {
   sewing: [
     { src: 'sewing1.png', alt: 'Sewing Project 1' },
     { src: 'sewing2.png', alt: 'Sewing Project 2' },
-    // add more images
-  ],
-  zines: [
-    { src: 'zine1.png', alt: 'Zine 1' },
-    { src: 'zine2.png', alt: 'Zine 2' },
   ],
   writing: [
-    { src: 'writing1.png', alt: 'Writing sample 1' },
+    { src: 'writing1.png', alt: 'Writing Sample 1' },
   ],
   calligraphy: [
     { src: 'calligraphy1.png', alt: 'Calligraphy Art 1' },
@@ -21,90 +15,82 @@ const galleries = {
 };
 
 const galleryContainer = document.getElementById('gallery-container');
-const modal = document.querySelector('.modal');       // use class selector to match your CSS
+const flipbookContainer = document.querySelector('#flipbook-container');
+const modal = document.querySelector('.modal');
 const modalImg = document.getElementById('modal-img');
 const modalCaption = document.getElementById('modal-caption');
 const modalClose = document.getElementById('modal-close');
 
-// Show default gallery on page load
-showGallery('sewing');
+let pageFlipInstance = null;
 
-// Function to show images grid
 function showGallery(category) {
   galleryContainer.innerHTML = '';
-  if (!galleries[category]) return;
 
-  galleries[category].forEach((imgData, index) => {
-    const img = document.createElement('img');
-    img.src = imgData.src;
-    img.alt = imgData.alt;
-    img.className = 'thumbnail';
-    img.dataset.category = category;
-    img.dataset.index = index;
-
-    img.addEventListener('click', () => {
-      openModal(category, index);
-    });
-
-    galleryContainer.appendChild(img);
-  });
-}
-
-// Open modal to view large image
-function openModal(category, index) {
-  const imgData = galleries[category][index];
-  modal.style.display = 'flex';     // show modal (flex from your CSS)
-  modalImg.src = imgData.src;
-  modalImg.alt = imgData.alt;
-  modalCaption.textContent = imgData.alt;
-}
-
-// Close modal when clicking X
-modalClose.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-// Also close modal if clicking outside image in modal
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
+  // Destroy existing flipbook if switching category
+  if (pageFlipInstance) {
+    pageFlipInstance.destroy();
+    pageFlipInstance = null;
   }
-});
 
-// Link category buttons to update gallery
-document.querySelectorAll('.buttons a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault(); // prevent page reload
-    // Get category from alt text of image inside the link, convert spaces to hyphens
-    const category = link.querySelector('img').alt.toLowerCase().replace(/\s+/g, '-');
-    showGallery(category);
-  });
-});
-img.style.cursor = 'pointer';
+  if (category === 'zines') {
+    flipbookContainer.style.display = 'block';
+    galleryContainer.style.display = 'none';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const swiperElements = document.querySelectorAll('.zine-swiper');
+  } else {
+    flipbookContainer.style.display = 'none';
+    galleryContainer.style.display = 'flex';
 
-  swiperElements.forEach((el, index) => {
-    const paginationEl = el.querySelector('.swiper-pagination');
-    paginationEl.classList.add('swiper-pagination-' + index);
+    if (!galleries[category]) {
+      console.warn(`No gallery found for category: ${category}`);
+      return;
+    }
 
-    new Swiper(el, {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination-' + index,
-        clickable: true,
-      },
+    galleries[category].forEach((imgData, index) => {
+      const img = document.createElement('img');
+      img.src = imgData.src;
+      img.alt = imgData.alt;
+      img.className = 'thumbnail';
+      img.dataset.category = category;
+      img.dataset.index = index;
+      img.style.cursor = 'pointer';
+      img.loading = 'lazy';
+
+      img.addEventListener('click', () => openModal(category, index));
+      galleryContainer.appendChild(img);
     });
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const swiper1 = new Swiper('.zine-swiper-1', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.zine-next-1',
+      prevEl: '.zine-prev-1',
+    },
   });
-});
-function enlarge(imgElement) {
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  modal.style.display = "block";
-  modalImg.src = imgElement.src;
-}
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
+  const swiper2 = new Swiper('.zine-swiper-2', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.zine-next-2',
+      prevEl: '.zine-prev-2',
+    },
+  });
+
+  const swiper3 = new Swiper('.zine-swiper-3', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.zine-next-3',
+      prevEl: '.zine-prev-3',
+    },
+  });
+});  // <-- Close your DOMContentLoaded listener here

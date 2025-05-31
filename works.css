@@ -1,4 +1,4 @@
-/* works.css updated */
+/* works.css updated for st-pageflip */
 
 /* Body and general */
 body {
@@ -22,7 +22,6 @@ a,
 html, body {
   cursor: url('path-to-image.png'), auto;
 }
-
 
 *, *::before, *::after {
   cursor: inherit;
@@ -69,22 +68,21 @@ html, body {
 
 .buttons button:hover {
   background-color: #ff389c;
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* Home button */
 .home-button {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 5px; /* Adjust this number to control space under the button */
+  margin: 0 auto 5px auto;
   width: fit-content;
 }
 
 .home-button img {
   width: 130px;
   height: auto;
-  margin:0px;
+  margin: 0;
   transition: transform 0.3s ease;
 }
 
@@ -103,7 +101,6 @@ html, body {
   align-items: center;
   background-color: white;
   border-radius: 12px;
-  /* Removed box-shadow for cleaner look */
   transition: transform 0.2s ease;
 }
 
@@ -115,8 +112,7 @@ html, body {
 
 .image-button:hover {
   transform: scale(1.2);
-    background-color: #db2777;
-
+  background-color: #db2777;
 }
 
 /* Gallery container */
@@ -130,10 +126,6 @@ html, body {
 }
 
 /* Gallery images and thumbnails */
-/* Remove box shadows and background */
-/* Increase size and keep aspect ratio */
-/* Limit max width/height to avoid huge images */
-
 .thumbnail,
 .gallery-img {
   width: 380px;         /* bigger size */
@@ -158,12 +150,12 @@ html, body {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1500;
   flex-direction: column;
-  padding: 10px; /* a bit of breathing room */
+  padding: 10px;
 }
 
 .modal.active {
@@ -176,8 +168,8 @@ html, body {
   max-height: 90vh;
   width: auto;
   height: auto;
-  border-radius: 4px; /* subtle rounding */
-  box-shadow: none;   /* remove shadow */
+  border-radius: 4px;
+  box-shadow: none;
 }
 
 /* Close button */
@@ -197,12 +189,14 @@ html, body {
 #modal-close:hover {
   color: #ff69b4;
 }
+
 #modal-caption {
   color: white;
   margin-top: 12px;
   font-size: 18px;
   text-align: center;
 }
+
 .section-header-img {
   display: block;
   margin: 40px auto 20px auto;
@@ -210,102 +204,6 @@ html, body {
   height: auto;
 }
 
-.swiper {
-  width: 100%;
-  max-width: 600px;
-  margin: 30px auto;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-img {
-  cursor: url('path-to-image.png'), auto;
-}
-.zine-block {
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-.zine-block h3 {
-  color: #ff69b4;
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.zine-swiper {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.zine-swiper .swiper-slide img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* Hide default arrows */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
-}
-
-/* Base styles for all zine nav arrows */
-.zine-swiper-1 .swiper-button-next,
-.zine-swiper-2 .swiper-button-next,
-.zine-swiper-3 .swiper-button-next,
-.zine-swiper-1 .swiper-button-prev,
-.zine-swiper-2 .swiper-button-prev,
-.zine-swiper-3 .swiper-button-prev {
-  position: absolute; 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 120px;
-  height: 80px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-/* Custom left arrows */
-.zine-swiper-1 .swiper-button-prev,
-.zine-swiper-2 .swiper-button-prev,
-.zine-swiper-3 .swiper-button-prev {
-  background-image: url('arrow-right.png');
-  left: -100px;
-}
-
-/* Custom right arrows */
-.zine-swiper-1 .swiper-button-next,
-.zine-swiper-2 .swiper-button-next,
-.zine-swiper-3 .swiper-button-next {
-  background-image: url('arrow-left.png');
-  right: -100px;
-}
-
-/* Swiper container styling */
-.swiper {
-  position: relative;
-  padding: 0 60px; /* space for arrows */
-  overflow: visible; /* prevent horizontal scroll */
-}
-
-/* Allow swiper-wrapper overflow to show arrows outside */
-.swiper-wrapper {
-  overflow: visible;
-}
-.zine-swiper-1,
-.zine-swiper-2,
-.zine-swiper-3,
-.zine-swiper-1 > *,
-.zine-swiper-2 > *,
-.zine-swiper-3 > * {
-  overflow: visible !important;
-}
 /* Custom cursor everywhere */
 html, body, * , *::before, *::after,
 button, button:hover, button:active, button:focus,
@@ -313,9 +211,11 @@ a, a:hover, a:active, a:focus,
 img, img:hover, img:active, img:focus {
   cursor: url('path-to-image.png'), auto !important;
 }
+
+/* Writing text styles */
 .subheader-desc {
   font-family: 'EB Garamond', serif;
-  color: #000000;           /* black text */
+  color: #000000;
   font-size: 16px;
   line-height: 1.6;
   text-align: center;
@@ -325,15 +225,16 @@ img, img:hover, img:active, img:focus {
   margin-left: auto;
   margin-right: auto;
 }
+
 .big-calligraphy-1 {
   width: 500px;
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .big-calligraphy-2 {
   width: 500px;
-      max-width: 100;
-  height: 5000%
+  max-width: 100%;
+  height: auto;
 }
 
 #modal-img {
@@ -343,45 +244,38 @@ img, img:hover, img:active, img:focus {
   margin-top: 30px;
 }
 
-.writing-text h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
-    color: #000000;           /* black text */
-    font-family: 'EB Garamond', serif;  /* 👈 Add this line */
-
-}
-
+.writing-text h3,
 .writing-text p {
   margin: 0.25rem 0;
-    color: #000000;           /* black text */
-    font-family: 'EB Garamond', serif;  /* 👈 Add this line */
-
-}
-
-.link-icon img {
-  width: 15%;
-  height: auto;
-  cursor: pointer;
-}
-.writing-entry {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  text-align: center;
+  color: #000000;
   font-family: 'EB Garamond', serif;
 }
 
-.link-icon img {
-  width: 100x;
-  height: auto;
-  margin-bottom: 10px;
-  cursor: pointer;
+.writing-text h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
-.writing-text {
-  max-width: 600px;
+.link-icon img {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.link-icon img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.1);
+}
+
+/* Writing grid and entries */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 20px;
+   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+
+}
+
 
 
 .link-icon img[src="ladybug.png"] {
@@ -413,45 +307,15 @@ img, img:hover, img:active, img:focus {
   width: 160px; /* or whatever size you want */
   height: auto;
 }
-.writing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  padding: 20px;
-}
-
 .writing-entry {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.link-icon img {
-  width: 60px;
-  height: auto;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.link-icon img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.1);
-}
-
-.top-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: black;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  z-index: 1000;
-}
-
-
+/* Floating buttons */
 .floating-buttons {
   position: fixed;
   bottom: 5px;
@@ -462,28 +326,6 @@ img, img:hover, img:active, img:focus {
   z-index: 1000;
 }
 
-/* Make the button container transparent and remove padding */
-.button {
-  background: none;
-  border: none;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-/* Control image size here */
-.button-icon {
-  width: 50px; /* Adjust size as needed */
-  height: auto;
-  display: block;
-  transition: transform 0.2s ease;
-}
-
-.button-icon:hover {
-  transform: scale(1.3); /* Optional hover effect */
-}
-
 .button {
   background-color: #ffffff;
   color: white;
@@ -491,7 +333,6 @@ img, img:hover, img:active, img:focus {
   border: none;
   border-radius: 12px;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s;
@@ -500,6 +341,18 @@ img, img:hover, img:active, img:focus {
 .button:hover {
   background-color: #db2777;
 }
+
+.button-icon {
+  width: 50px;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.button-icon:hover {
+  transform: scale(1.3);
+}
+
 /* Sparkle effect */
 .sparkle {
   position: fixed;
@@ -522,4 +375,199 @@ img, img:hover, img:active, img:focus {
     transform: scale(2) translate(-5px, -5px);
     opacity: 0;
   }
+}
+
+.zine-block {
+margin-bottom: 60px;
+text-align: center;
+}
+
+
+.zine-block h3 {
+color: #ff69b4;
+font-size: 24px;
+margin-bottom: 12px;
+}
+
+
+.zine-swiper {
+  width: 100%;
+  max-width: 280px; /* Match image max-width */
+  margin: 0 auto;
+}
+
+.zine-swiper .swiper-slide img {
+  width: 100%;
+  max-width: 280px;  /* Now it can't exceed swiper size */
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* Base styles for all zine nav arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next,
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+position: absolute;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 80px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+}
+
+
+/* Custom left arrows */
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+background-image: url('arrow-right.png');
+left: -100px;
+}
+
+
+/* Custom right arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next {
+background-image: url('arrow-left.png');
+right: -100px;
+}
+
+
+/* Allow swiper-wrapper overflow to show arrows outside */
+.swiper-wrapper {
+overflow: visible;
+}
+
+.swiper {
+  width: 80%; /* or whatever smaller value you want */
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.swiper {
+width: 100%;
+max-width: 600px;
+margin: 30px auto;
+}
+
+
+.swiper-slide img {
+width: 100%;
+height: auto;
+display: block;
+border-radius: 10px;
+}
+
+
+img {
+cursor: url('path-to-image.png'), auto;
+}
+.zine-block {
+margin-bottom: 60px;
+text-align: center;
+}
+
+
+.zine-block h3 {
+color: #ff69b4;
+font-size: 24px;
+margin-bottom: 12px;
+}
+
+
+.zine-swiper {
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+}
+.zine-swiper .swiper-slide img {
+width: 100%;
+border-radius: 12px;
+}
+
+
+/* Hide default arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+display: none;
+}
+
+
+/* Base styles for all zine nav arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next,
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+position: absolute;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 80px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+}
+
+
+/* Custom left arrows */
+.zine-swiper-1 .swiper-button-prev,
+.zine-swiper-2 .swiper-button-prev,
+.zine-swiper-3 .swiper-button-prev {
+background-image: url('arrow-right.png');
+left: -100px;
+}
+
+
+/* Custom right arrows */
+.zine-swiper-1 .swiper-button-next,
+.zine-swiper-2 .swiper-button-next,
+.zine-swiper-3 .swiper-button-next {
+background-image: url('arrow-left.png');
+right: -100px;
+}
+
+
+/* Swiper container styling */
+.swiper {
+position: relative;
+padding: 0 60px; /* space for arrows */
+overflow: visible; /* prevent horizontal scroll */
+}
+
+
+/* Allow swiper-wrapper overflow to show arrows outside */
+.swiper-wrapper {
+overflow: visible;
+}
+.zine-swiper-1,
+.zine-swiper-2,
+.zine-swiper-3,
+.zine-swiper-1 > *,
+.zine-swiper-2 > *,
+.zine-swiper-3 > * {
+overflow: visible !important;
 }
