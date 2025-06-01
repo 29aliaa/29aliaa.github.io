@@ -12,17 +12,21 @@ body {
 flex-wrap: wrap;
 }
 
-/* Pink left panel */
 .left-panel {
   width: 40%;
   padding: 20px;
   /* remove background-color from here */
-  border-radius: 10px;
+  border-radius: 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+   background-color:rgb(0, 0, 0); /* Replace with your image path */
+  background-size: cover;                 /* Make it fill the panel */
+  background-position: center;            /* Center the image */
+  background-repeat: no-repeat;           /* Avoid tiling */
 }
 
 /* Only paragraph text box gets the black background */
@@ -56,10 +60,13 @@ flex-wrap: wrap;
 
 /* Bio text */
 .bio-text {
-  color: #ffffff;
+  font-family: 'Courier New', monospace;
   font-size: 16px;
   line-height: 1.6;
+  color: rgb(255, 244, 244);
   text-align: center;
+  background-color: transparent; /* make sure no conflicting background */
+  box-sizing: border-box;
 }
 
 /* Collage right panel */
@@ -87,7 +94,7 @@ flex-wrap: wrap;
   }
 }
 body {
-  font-family: 'EB Garamond', serif;
+font-family: 'Courier New', Courier, 'Lucida Console', monospace;
 }
 body {
   cursor: url('path-to-image.png'), auto;
@@ -132,7 +139,7 @@ body * {
   width: 60%;
   position: relative;
   padding: 0;
-  background-color: rgb(252, 197, 234);
+  background-color: rgb(255, 197, 234);
   background-image: url('your-collage.png'); /* <— your full-panel PNG */
   background-size: cover;
   background-repeat: no-repeat;

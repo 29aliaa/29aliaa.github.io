@@ -93,3 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });  // <-- Close your DOMContentLoaded listener here
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const entries = document.querySelectorAll('.writing-entry');
+
+    const observer = new IntersectionObserver((entriesList) => {
+      entriesList.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          // If you want to reveal once only:
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    entries.forEach(entry => observer.observe(entry));
+  });
+
