@@ -1,14 +1,16 @@
-/* Full-page black background with large pink polka hearts */
+/* background */
 body {
   margin: 0;
   font-family: 'EB Garamond', serif;
+
   background-color: black;
   background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
   background-size: 60px 60px;
+  animation: flashInvert 3s steps(1, end) infinite;
   cursor: url('path-to-image.png'), auto;
 }
 
-/* Centering the main card */
+
 .outer {
   display: flex;
   justify-content: center;
@@ -18,7 +20,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Light pink card with small pink polka dots */
+/* center */
 .center-box {
   background-color: #fce6f9;
   background-image: radial-gradient(#fcdff9 8%, transparent 8%);
@@ -33,7 +35,7 @@ body {
   will-change: transform;
 }
 
-/* Logo image */
+/* main logo/image */
 .logo-img {
   width: 400px;
   height: auto;
@@ -41,7 +43,7 @@ body {
   margin: 0 auto 10px auto;
 }
 
-/* Nav styling for buttons as images side by side */
+/* Nav buttons */
 nav {
   display: flex;
   justify-content: center;
@@ -49,7 +51,7 @@ nav {
   padding: 0;
 }
 
-/* Nav links styled as buttons with no extra background/borders */
+/* Nav links  */
 .nav-button {
   background: none;
   border: none;
@@ -80,14 +82,14 @@ nav {
 }
 .home-button {
   position: fixed;
-  top: 10px;           /* distance from the top edge */
-  left: 50%;           /* center horizontally */
-  transform: translateX(-50%); /* adjust for true center */
-  z-index: 1000;       /* keep it above everything else */
+  top: 10px;          
+  left: 50%;          
+  transform: translateX(-50%); 
+  z-index: 1000;       
 }
 
 .home-button img {
-  width: 120px;         /* adjust for desired size */
+  width: 120px;       
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -129,13 +131,13 @@ body * {
 @media (max-width: 768px) {
   .center-box {
     width: 90%;
-    max-width: none; /* Allow full width usage on small screens */
-    padding: 20px;   /* Add some padding for better readability */
+    max-width: none; 
+    padding: 20px;  
   }
 
   .logo-img {
-    width: 100%;     /* Make sure it scales with the container */
-    max-width: 300px; /* Optional: limit maximum size for visibility */
+    width: 100%;     
+    max-width: 300px; 
     height: auto;
   }
 }
@@ -150,4 +152,20 @@ body * {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+@keyframes flashInvert {
+  0% {
+    background-color: black;
+    background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
+  }
+
+  50% {
+    background-color: rgb(252, 197, 234);
+    background-image: radial-gradient(black 25px, transparent 20%);
+  }
+
+  100% {
+    background-color: black;
+    background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
+  }
 }
