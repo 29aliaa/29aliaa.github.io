@@ -6,7 +6,7 @@ body {
   background-color: black;
   background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
   background-size: 60px 60px;
-  animation: flashInvert 2s steps(1, end) infinite;
+  animation: flashInvert 2.5s steps(1, end) infinite;
   cursor: url('path-to-image.png'), auto;
 }
 
@@ -75,10 +75,10 @@ nav {
 
 .nav-img:hover {
   opacity: 2;
-  transform: scale(1.05);
-  box-shadow: 0 0 8px #000000;
+  transform: scale(1.25);
+  box-shadow: 0 0 8px #e85ce8;
   border-radius: 12px;
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 .home-button {
   position: fixed;
@@ -96,6 +96,9 @@ nav {
 
 .home-button img:hover {
   transform: scale(1.1);
+  opacity: 2;
+  border-radius: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 button,
 a,

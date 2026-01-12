@@ -54,7 +54,7 @@ html, body {
 .ticker-track {
   display: flex;
   flex-wrap: nowrap;
-  animation: scroll 10s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 .ticker-track .look-img {
@@ -97,6 +97,7 @@ html, body {
 
 .logo-img:hover {
   transform: scale(1.2);
+  
 }
 
 .look-img {
@@ -121,6 +122,10 @@ html, body {
 .buttons button:hover {
   background-color: #ff389c;
   transform: scale(1.2);
+    opacity: 2;
+  box-shadow: 0 0 8px #e011d5;
+  border-radius: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Home button */
@@ -164,6 +169,10 @@ html, body {
 .image-button:hover {
   transform: scale(1.2);
   background-color: #db2777;
+  opacity: 2;
+  box-shadow: 0 0 8px #000000;
+  border-radius: 12px;
+  transition: opacity 0.3s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 
 /* Gallery container */
