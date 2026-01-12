@@ -13,6 +13,25 @@ const galleries = {
     { src: 'graphic1.png', alt: 'Graphic Design 1' },
   ],
 };
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.ticker-container');
+  const track = document.querySelector('.ticker-track');
+
+  // Get all current logos
+  const logos = Array.from(track.children);
+
+  // Keep duplicating until the track is at least twice the container width
+  let trackWidth = track.scrollWidth;
+  const containerWidth = container.offsetWidth;
+
+  while (trackWidth < containerWidth * 2) {
+    logos.forEach(img => {
+      const clone = img.cloneNode(true);
+      track.appendChild(clone);
+    });
+    trackWidth = track.scrollWidth;
+  }
+});
 
 const galleryContainer = document.getElementById('gallery-container');
 const flipbookContainer = document.querySelector('#flipbook-container');
@@ -110,4 +129,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     entries.forEach(entry => observer.observe(entry));
   });
+
 

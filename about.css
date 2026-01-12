@@ -1,80 +1,111 @@
-/* Overall page */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  font-family: sans-serif;
+  background-color: #fce6f9;
+    font-family: sans-serif;
 }
 
 /* Two-column layout */
 .about-container {
   display: flex;
-flex-wrap: wrap;
+flex-wrap: nowrap;
+  min-height: 100svh;
+
 }
 
 .left-panel {
   width: 40%;
   padding: 20px;
-  /* remove background-color from here */
   border-radius: 0px;
+    background-color: #000;
+      align-self: stretch;
+
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-   background-color:rgb(0, 0, 0); /* Replace with your image path */
-  background-size: cover;                 /* Make it fill the panel */
-  background-position: center;            /* Center the image */
+    background-size: cover;                 
+  background-position: center;        
   background-repeat: no-repeat;           /* Avoid tiling */
 }
 
 /* Only paragraph text box gets the black background */
 .text-box {
-  background-color: #000000;
+  background-color: transparent;
+  position: relative; 
   padding: 40px 30px;
-  padding-top: 80px; /* if you want more top padding */
+  padding-top: 80px; 
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
-  color: white; /* so text is visible on black */
+  color: rgb(255, 255, 255); 
   width: 100%;  /* fill container */
   box-sizing: border-box;
 }
 
 .about-img {
-  width: 50%;
+  width: 65%;
   height: auto;
   display: block;   /* removes inline spacing */
   float: left;      /* ensures it sticks to the left */
-  margin-right: 20px; /* optional: space between image and text */
+  margin-right: 20px; 
+  
 }
 /* Profile image */
 .profile-img {
   width: 350px;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 5px;
+  margin-top: 0px;  
+  margin-bottom: 0px;
+    transition: transform 0.7s ease, filter 0.4s ease;
+
 }
+
 
 /* Bio text */
 .bio-text {
+  position: relative;               
   font-family: 'Courier New', monospace;
   font-size: 16px;
   line-height: 1.6;
-  color: rgb(255, 244, 244);
+  color: rgb(255, 255, 255);
   text-align: center;
-  background-color: transparent; /* make sure no conflicting background */
+    margin-top: 0;
   box-sizing: border-box;
 }
 
-/* Collage right panel */
-.collage-panel {
-  width: 60%;
-  position: relative;
-  padding: 20px;
+.bio-text::before {
+  content: "";
+  position: absolute;
+  inset: -40px ;
+
+  top: 20%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  z-index: 0;                       
+  pointer-events: none;
+  opacity: 0.95;
 }
+
+.bio-text p {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
 
 /* Collage images */
 .collage-img {
@@ -139,18 +170,39 @@ body * {
   width: 60%;
   position: relative;
   padding: 0;
-  background-color: rgb(255, 197, 234);
-  background-image: url('your-collage.png'); /* <— your full-panel PNG */
+    background-color: #fce6f9;
+  background-image: url('flowerz.png'); 
   background-size: cover;
-  background-repeat: no-repeat;
+    background-repeat: repeat-x;
   background-position: center;
 }
+
+
+.corner-png {
+  position: absolute; /* position relative to collage-panel */
+  bottom: 30px;          /* align to bottom of panel */
+  right: 70px;           /* align to right of panel */
+  max-width: 250px;   /* adjust size */
+  height: auto;       /* preserve aspect ratio */
+  z-index: 10;        /* above background but below envelope if needed */
+}
+
+@media (max-width: 480px) {
+  .corner-png {
+    max-width: 120px;   /* smaller on phones */
+    bottom: 12px;       /* tighter spacing */
+    right: 12px;
+  }
+  }
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     height: auto;
     
   }
+
+
 
   .left-panel,
   .collage-panel {
@@ -183,10 +235,10 @@ body * {
     transform: none; /* remove horizontal centering */
   }
 }
-/* Default size (for desktop and larger screens) */
+
 .home-icon {
   width: 40px; /* or whatever your default size is */
-  height: auto; /* maintain aspect ratio */
+  height: auto; 
 }
 
 /* On mobile devices (max-width 600px), make it smaller */
@@ -227,9 +279,10 @@ body * {
   }
 
   /* Push content down to avoid overlap */
-  body {
-    padding-top: 60px;
-  }
+  .page-wrapper {
+  padding-top: 60px;
+}
+
 
   /* Hide existing centered home button on mobile */
   .home-button {
@@ -238,8 +291,94 @@ body * {
 }
 .profile-img:hover {
   transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 12px 24px rgba(255, 105, 180, 0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  filter: brightness(1.1);
+  filter: brightness(1.1)
+          drop-shadow(0 12px 24px rgba(255, 105, 180, 0.4));
 }
 
+.envelope {
+  position: absolute;
+  top: 48%;
+  left: 46%;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  z-index: 6;
+  cursor: pointer;
+}
+
+.envelope img {
+  width: 240px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+
+.envelope img:hover {
+  transform: scale(1.08);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .envelope {
+    top: 40%;
+    left: 50%;
+    width: 30px; /* smaller size for phones */
+  }
+  }
+
+  .envelope img {
+    width: 180px;
+  }
+
+@keyframes drift {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) rotate(-2deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(6px, -10px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(-4px, -18px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(-8px, -6px) rotate(-1.5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0) rotate(-2deg);
+  }
+}
+
+#envelopeImg {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#envelopeImg.open {
+  transform: scale(2.3); /* adjust size */
+}
+
+
+/* Mobile override */
+@media (max-width: 480px) {
+  #envelopeImg.open {
+    transform: scale(1.4);
+  }
+}
+
+
+a {
+  color: #ff9deb;      /* default link color */
+  text-decoration: underline; /* optional: remove underline */
+}
+
+
+a:hover {
+  color: #fdfdfd;     /* color when hovering */
+  text-decoration: underline; /* optional */
+}
+
+a:active {
+  color: #d16fb8;     /* when clicking */
+}
+
+html, body {
+  overflow-x: hidden;
+}

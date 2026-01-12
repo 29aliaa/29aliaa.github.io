@@ -1,4 +1,4 @@
-can u just do it for me, here is my htmln and i can give u my css : <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>ABOUT ALiASERENE*ੈ✩‧₊˚༺☆</title>
@@ -18,12 +18,17 @@ can u just do it for me, here is my htmln and i can give u my css : <!DOCTYPE ht
     <img src="home-button.png" alt="Home" class="mobile-home-icon" />
   </a>
 </div>
+<div class="page-wrapper">
+  <!-- all content -->
+
 
   <div class="about-container">
-    <!-- Pink box on the left -->
+    
     <div class="left-panel">
       <img src="about-me.png" alt="Header Decoration" class="about-img" />
-      <img src="alia-serene.jpeg" alt="Alia Serene Portrait" class="profile-img" />
+      <img src="aliaserene2.png" alt="Alia Serene Portrait" class="profile-img"  />
+
+
 
       <div class="bio-text">
         <!-- Typewriter text -->
@@ -31,16 +36,24 @@ can u just do it for me, here is my htmln and i can give u my css : <!DOCTYPE ht
 
         <!-- Regular bio continues here -->
         <p>
-          Originally from the Chicagoland area, I'm an NYU student concentrating in education, history, and data science with a minor in Middle Eastern studies. Also, I have to mention that I'm Syrian-American!!! As an artist, I love creating, designing, learning, teaching, and experimenting! Thank you for checking out my digital little world—I hope you leave finding something you love and feeling inspired<3 </p>
+          I'm a Syrian-American from Chicagoland studying education studies/history/data science + an Arabic minor and living in NYC. Click <a href="https://29aliaa.github.io/works.html" target="_blank" rel="noopener noreferrer">
+    here</a> to see my works. Thank you for checking out my digital little world—I hope you leave finding something you love and feeling inspired<3</p>
       </div>
     </div>
 
   <div class="collage-panel">
+  <img src="clickme.png" alt="" class="corner-png" />
+
+    <div class="envelope">
+  <img
+    src="envelope-closed.png" alt="Closed envelope"  id="envelopeImg"  onclick="openEnvelope()" />
+  </div>
 </div>
+
 
   <!-- JavaScript for Typewriter Effect -->
   <script>
-    const text = "Hiiii!!! My name is Alia—welcome to ALiASERENE'S WORLD❤︎❤︎❤︎";
+    const text = "Hi!! My name is Alia—welcome to ALiASERENE'S WORLD❤︎❤︎❤︎";
     let i = 0;
     const speed = 50;
 
@@ -54,6 +67,56 @@ can u just do it for me, here is my htmln and i can give u my css : <!DOCTYPE ht
 
     window.onload = typeWriter;
   </script>
+
+  <script>
+  const envelope = document.querySelector(".envelope");
+  const panel = document.querySelector(".collage-panel");
+
+  let x = 100;
+  let y = 100;
+  let vx = 1.2;   // speed X
+  let vy = 0.9;   // speed Y
+
+  function moveEnvelope() {
+    const panelRect = panel.getBoundingClientRect();
+    const envRect = envelope.getBoundingClientRect();
+
+    x += vx;
+    y += vy;
+
+    // Bounce off edges
+    if (x <= 0 || x + envRect.width >= panelRect.width) {
+      vx *= -1;
+    }
+
+    if (y <= 0 || y + envRect.height >= panelRect.height) {
+      vy *= -1;
+    }
+
+    envelope.style.left = x + "px";
+    envelope.style.top = y + "px";
+
+    requestAnimationFrame(moveEnvelope);
+  }
+
+  moveEnvelope();
+</script>
+
+
+<script>
+  function openEnvelope() {
+    const img = document.getElementById("envelopeImg");
+
+    if (img.classList.contains("open")) {
+      img.src = "envelope-closed.png";
+      img.classList.remove("open");
+    } else {
+      img.src = "envelope-opened.png";
+      img.classList.add("open");
+    }
+  }
+</script>
+</div>
   
 </body>
 </html>

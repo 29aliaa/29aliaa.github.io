@@ -6,7 +6,7 @@ body {
   background-color: black;
   background-image: radial-gradient(rgb(252, 197, 234) 25px, transparent 20%);
   background-size: 60px 60px;
-  animation: flashInvert 3s steps(1, end) infinite;
+  animation: flashInvert 2s steps(1, end) infinite;
   cursor: url('path-to-image.png'), auto;
 }
 

@@ -3,8 +3,9 @@ body {
   background-color: #fce6f9;
   background-image: none;
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
+  font-family: 'EB Garamond', serif;
+  color: rgb(0, 0, 0);
+   text-align: center; /* THIS centers all text inside body */
 }
 
 /* Custom cursor for interactive elements */
@@ -38,6 +39,38 @@ html, body {
   width: 90%;
   max-width: 1200px; 
   text-align: center;
+    position: relative;
+
+}
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px 0; /* space above and below */
+
+  height: 80px; /* fixed height prevents extra vertical space */
+}
+
+.ticker-track {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+.ticker-track .look-img {
+  height: 50px;
+  margin-right: 2rem;
+  display: inline-block;
+  transition: none; 
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Logo */
@@ -51,8 +84,29 @@ html, body {
   transition: transform 0.3s ease;
 }
 
+
+.logo-img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
 .logo-img:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
+}
+
+.look-img {
+  width: 1000px;
+  height: auto;
+  margin-bottom: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
 }
 
 /* Buttons */
@@ -92,18 +146,17 @@ html, body {
 .image-button {
   width: 170px;
   height: 100px;
-  padding: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 12px;
-  transition: transform 0.2s ease;
+  transition: transform 0.7s ease;
 }
 
 .image-button img {
-  width: 150px;
+  width: 140px;
   height: auto;
   display: block;
 }
@@ -132,16 +185,12 @@ html, body {
   box-shadow: none;     /* no shadow */
   background: none;     /* no background */
   cursor: pointer;
-  transition: transform 0.3s ease;
   max-width: 380px;
   max-height: 380px;
   object-fit: contain;  /* scale image to fit box without distortion */
 }
 
-.thumbnail:hover,
-.gallery-img:hover {
-  transform: scale(1.05);
-}
+
 
 /* Modal styles */
 .modal {
@@ -211,7 +260,7 @@ img, img:hover, img:active, img:focus {
 }
 
 /* Writing text styles */
-.subheader-desc {
+.suber-desc {
   font-family: 'EB Garamond', serif;
   color: #000000;
   font-size: 16px;
@@ -630,7 +679,8 @@ overflow: visible !important;
 
 .zine-container,
 .sewing-container,
-.writing-container {
+.writing-container,
+.ceramic-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -648,12 +698,12 @@ overflow: visible !important;
   height: auto;
   object-fit: contain;
 }
+
 @media (max-width: 768px) {
   .section-header-img {
     width: 80%;
   }
 
-@media (max-width: 768px) {
   .writing-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -665,6 +715,7 @@ overflow: visible !important;
     text-align: center;
     padding: 0 10px;
   }
+}
 
   /* Swiper arrows styling on mobile */
   .swiper-button-prev,
@@ -696,4 +747,67 @@ overflow: visible !important;
 html, body {
   overflow-x: hidden;
   width: 100%;
+}
+/* Ceramic container */
+.ceramic-container {
+  display: grid;
+  grid-template-columns: repeat(3, 350px); 
+  gap: 16px;  
+  justify-items: center; 
+}
+
+.ceramic-item {
+  width: 350px;  
+  height: 350px;
+  display: flex;
+  justify-content: center;  
+  position: relative;
+}
+
+/* Styling for images */
+.ceramic-img {
+  width: 100%; /* Ensure image fills the container */
+  height: 100%; /* Ensures it fills the full item height */
+  object-fit: contain; /* Maintain aspect ratio */
+  visibility: hidden; /* Hide images by default */
+    transition: visibility 0s ease; /* Smooth transition for visibility */
+position: absolute;
+}
+
+/* Make the first image visible */
+.ceramic-img.img1 {
+  visibility: visible;
+}
+
+/* Hover effect: hide the first image and show the second image */
+.ceramic-item:hover .ceramic-img.img1 {
+  visibility: hidden;
+}
+
+.ceramic-item:hover .ceramic-img.img2 {
+  visibility: visible;
+}
+
+.ceramic-item.small {
+  width: 280px;
+  height: 280px;
+}
+
+.ceramic-item.sam {
+  width: 310px;
+  height: 310px;
+}
+@media (max-width: 600px) {
+  .ceramic-container {
+    gap: 0.5rem;
+  }
+
+  .ceramic-item {
+    flex: 1 1 100%;  /* full-width items on tiny screens */
+    max-width: none;
+  }
+
+  .ceramic-img {
+    height: auto;
+  }
 }
