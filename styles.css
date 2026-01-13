@@ -1,4 +1,4 @@
-/* background */
+
 body {
   margin: 0;
   font-family: 'EB Garamond', serif;
@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
 }
 
-/* center */
+
 .center-box {
   background-color: #fce6f9;
   background-image: radial-gradient(#fcdff9 8%, transparent 8%);
@@ -35,7 +35,7 @@ body {
   will-change: transform;
 }
 
-/* main logo/image */
+
 .logo-img {
   width: 400px;
   height: auto;
@@ -43,7 +43,6 @@ body {
   margin: 0 auto 10px auto;
 }
 
-/* Nav buttons */
 nav {
   display: flex;
   justify-content: center;
@@ -51,7 +50,7 @@ nav {
   padding: 0;
 }
 
-/* Nav links  */
+
 .nav-button {
   background: none;
   border: none;

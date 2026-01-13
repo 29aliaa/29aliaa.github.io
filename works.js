@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.ticker-container');
   const track = document.querySelector('.ticker-track');
 
-  // Get all current logos
+
   const logos = Array.from(track.children);
 
-  // Keep duplicating until the track is at least twice the container width
   let trackWidth = track.scrollWidth;
   const containerWidth = container.offsetWidth;
 
@@ -111,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: '.zine-prev-3',
     },
   });
-});  // <-- Close your DOMContentLoaded listener here
+});  
 
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -121,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       entriesList.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
-          // If you want to reveal once only:
+    
           observer.unobserve(entry.target);
         }
       });

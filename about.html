@@ -19,7 +19,6 @@
   </a>
 </div>
 <div class="page-wrapper">
-  <!-- all content -->
 
 
   <div class="about-container">
@@ -31,12 +30,9 @@
 
 
       <div class="bio-text">
-        <!-- Typewriter text -->
         <p id="typewriter"></p>
 
-        <!-- Regular bio continues here -->
-        <p>
-          I'm a Syrian-American from Chicagoland studying education studies/history/data science in NYC. Click <a href="https://29aliaa.github.io/works.html" target="_blank" rel="noopener noreferrer">
+        <p>I'm a Syrian-American from Chicagoland studying education studies/history/data science in NYC. In the future, I want to be either a teacher, public defender, librarian, or community organizer. Click <a href="https://29aliaa.github.io/works.html" target="_blank" rel="noopener noreferrer">
     here</a> to see my projects. Click the عالية above to go back home. Thank you for checking out my digital little world—I hope you leave finding something you love and feeling inspired<3</p>
       </div>
     </div>
@@ -51,7 +47,7 @@
 </div>
 
 
-  <!-- JavaScript for Typewriter Effect -->
+
   <script>
     const text = "Hi!! My name is Alia—welcome to ALiASERENE'S WORLD❤︎❤︎❤︎";
     let i = 0;
@@ -74,8 +70,8 @@
 
   let x = 100;
   let y = 100;
-  let vx = 1.2;   // speed X
-  let vy = 0.9;   // speed Y
+  let vx = 1.2;   
+  let vy = 0.9;  
 
   function moveEnvelope() {
     const panelRect = panel.getBoundingClientRect();
@@ -84,7 +80,7 @@
     x += vx;
     y += vy;
 
-    // Bounce off edges
+
     if (x <= 0 || x + envRect.width >= panelRect.width) {
       vx *= -1;
     }

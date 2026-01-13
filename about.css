@@ -5,7 +5,6 @@ body {
     font-family: sans-serif;
 }
 
-/* Two-column layout */
 .about-container {
   display: flex;
 flex-wrap: nowrap;
@@ -28,10 +27,10 @@ flex-wrap: nowrap;
 
     background-size: cover;                 
   background-position: center;        
-  background-repeat: no-repeat;           /* Avoid tiling */
+  background-repeat: no-repeat;         
 }
 
-/* Only paragraph text box gets the black background */
+
 .text-box {
   background-color: transparent;
   position: relative; 
@@ -42,19 +41,19 @@ flex-wrap: nowrap;
   padding-bottom: 20px;
   border-radius: 10px;
   color: rgb(255, 255, 255); 
-  width: 100%;  /* fill container */
+  width: 100%;  
   box-sizing: border-box;
 }
 
 .about-img {
   width: 65%;
   height: auto;
-  display: block;   /* removes inline spacing */
-  float: left;      /* ensures it sticks to the left */
+  display: block; 
+  float: left;      
   margin-right: 20px; 
   
 }
-/* Profile image */
+
 .profile-img {
   width: 350px;
   height: auto;
@@ -66,7 +65,7 @@ flex-wrap: nowrap;
 }
 
 
-/* Bio text */
+
 .bio-text {
   position: relative;               
   font-family: 'Courier New', monospace;
@@ -104,10 +103,6 @@ flex-wrap: nowrap;
 }
 
 
-
-
-
-/* Collage images */
 .collage-img {
   position: absolute;
   width: 100px;
@@ -115,7 +110,7 @@ flex-wrap: nowrap;
   animation: float 6s ease-in-out infinite alternate;
 }
 
-/* Optional floating animation */
+
 @keyframes float {
   from {
     transform: translateY(0px);
@@ -132,14 +127,14 @@ body {
 }
 .home-button {
   position: fixed;
-  top: 10px;           /* distance from the top edge */
-  left: 50%;           /* center horizontally */
-  transform: translateX(-50%); /* adjust for true center */
-  z-index: 1000;       /* keep it above everything else */
+  top: 10px;          
+  left: 50%;     
+  transform: translateX(-50%); 
+  z-index: 1000;     
 }
 
 .home-button img {
-  width: 120px;         /* adjust for desired size */
+  width: 120px;         
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -179,18 +174,18 @@ body * {
 
 
 .corner-png {
-  position: absolute; /* position relative to collage-panel */
-  bottom: 30px;          /* align to bottom of panel */
-  right: 70px;           /* align to right of panel */
-  max-width: 250px;   /* adjust size */
-  height: auto;       /* preserve aspect ratio */
-  z-index: 10;        /* above background but below envelope if needed */
+  position: absolute; 
+  bottom: 30px;    
+  right: 70px;           
+  max-width: 250px;  
+  height: auto;       
+  z-index: 10;        
 }
 
 @media (max-width: 480px) {
   .corner-png {
-    max-width: 120px;   /* smaller on phones */
-    bottom: 12px;       /* tighter spacing */
+    max-width: 120px;   
+    bottom: 12px;      
     right: 12px;
   }
   }
@@ -232,27 +227,27 @@ body * {
 @media (max-width: 768px) {
   .home-button {
     left: 10px;
-    transform: none; /* remove horizontal centering */
+    transform: none; 
   }
 }
 
 .home-icon {
-  width: 40px; /* or whatever your default size is */
+  width: 40px; 
   height: auto; 
 }
 
-/* On mobile devices (max-width 600px), make it smaller */
+
 @media (max-width: 600px) {
   .home-icon {
-    width: 10px; /* smaller size for mobile */
+    width: 10px;
   }
 }
-/* Hide mobile header by default */
+
 .mobile-header {
   display: none;
 }
 
-/* Mobile-only top bar styles */
+
 @media (max-width: 768px) {
   .mobile-header {
     display: flex;
@@ -315,12 +310,12 @@ body * {
   transform: scale(1.08);
 }
 
-/* Mobile */
+
 @media (max-width: 480px) {
   .envelope {
     top: 40%;
     left: 50%;
-    width: 30px; /* smaller size for phones */
+    width: 30px; 
   }
   }
 
@@ -352,11 +347,11 @@ body * {
 }
 
 #envelopeImg.open {
-  transform: scale(2.3); /* adjust size */
+  transform: scale(2.3);
 }
 
 
-/* Mobile override */
+
 @media (max-width: 480px) {
   #envelopeImg.open {
     transform: scale(1.4);
@@ -365,18 +360,18 @@ body * {
 
 
 a {
-  color: #ff9deb;      /* default link color */
-  text-decoration: underline; /* optional: remove underline */
+  color: #ff9deb;    
+  text-decoration: underline;
 }
 
 
 a:hover {
-  color: #fdfdfd;     /* color when hovering */
-  text-decoration: underline; /* optional */
+  color: #fdfdfd;     
+  text-decoration: underline;
 }
 
 a:active {
-  color: #d16fb8;     /* when clicking */
+  color: #d16fb8;     
 }
 
 html, body {

@@ -1,14 +1,14 @@
-/* Body and general */
+
 body {
   background-color: #fce6f9;
   background-image: none;
   margin: 0;
   font-family: 'EB Garamond', serif;
   color: rgb(0, 0, 0);
-   text-align: center; /* THIS centers all text inside body */
+   text-align: center; 
 }
 
-/* Custom cursor for interactive elements */
+
 button,
 a,
 .nav-button,
@@ -46,9 +46,8 @@ html, body {
 .ticker-container {
   width: 100%;
   overflow: hidden;
-  margin: 10px 0; /* space above and below */
-
-  height: 80px; /* fixed height prevents extra vertical space */
+  margin: 10px 0; 
+  height: 80px;
 }
 
 .ticker-track {
@@ -73,17 +72,6 @@ html, body {
   }
 }
 
-/* Logo */
-.logo-img {
-  max-width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.3s ease;
-}
-
 
 .logo-img {
   max-width: 300px;
@@ -94,6 +82,7 @@ html, body {
   margin-right: auto;
   transition: transform 0.3s ease;
 }
+
 
 .logo-img:hover {
   transform: scale(1.2);
@@ -110,7 +99,7 @@ html, body {
   transition: transform 0.3s ease;
 }
 
-/* Buttons */
+
 .buttons {
   margin-top: 30px;
   display: flex;
@@ -128,7 +117,7 @@ html, body {
   transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Home button */
+
 .home-button {
   display: flex;
   justify-content: center;
@@ -147,7 +136,7 @@ html, body {
   transform: scale(1.3);
 }
 
-/* Image buttons */
+
 .image-button {
   width: 170px;
   height: 100px;
@@ -175,7 +164,6 @@ html, body {
   transition: opacity 0.3s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 
-/* Gallery container */
 #gallery-container,
 .gallery-grid {
   display: flex;
@@ -185,23 +173,22 @@ html, body {
   margin-top: 20px;
 }
 
-/* Gallery images and thumbnails */
+
 .thumbnail,
 .gallery-img {
-  width: 380px;         /* bigger size */
-  height: auto;         /* maintain natural ratio */
-  border-radius: 0;     /* no rounding */
-  box-shadow: none;     /* no shadow */
-  background: none;     /* no background */
+  width: 380px;       
+  height: auto;         
+  border-radius: 0;     
+  box-shadow: none;   
+  background: none;    
   cursor: pointer;
   max-width: 380px;
   max-height: 380px;
-  object-fit: contain;  /* scale image to fit box without distortion */
+  object-fit: contain;  
 }
 
 
 
-/* Modal styles */
 .modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -228,7 +215,7 @@ html, body {
   box-shadow: none;
 }
 
-/* Close button */
+
 #modal-close {
   position: fixed;
   top: 20px;
@@ -260,7 +247,7 @@ html, body {
   height: auto;
 }
 
-/* Custom cursor everywhere */
+
 html, body, * , *::before, *::after,
 button, button:hover, button:active, button:focus,
 a, a:hover, a:active, a:focus,
@@ -268,7 +255,7 @@ img, img:hover, img:active, img:focus {
   cursor: url('path-to-image.png'), auto !important;
 }
 
-/* Writing text styles */
+
 .suber-desc {
   font-family: 'EB Garamond', serif;
   color: #000000;
@@ -401,8 +388,6 @@ img, img:hover, img:active, img:focus {
 }
 
 
-
-/* Floating buttons */
 .floating-buttons {
   position: fixed;
   bottom: 5px;
@@ -440,7 +425,7 @@ img, img:hover, img:active, img:focus {
   transform: scale(1.3);
 }
 
-/* Sparkle effect */
+
 .sparkle {
   position: fixed;
   width: 6px;
@@ -479,13 +464,13 @@ margin-bottom: 12px;
 
 .zine-swiper {
   width: 100%;
-  max-width: 280px; /* Match image max-width */
+  max-width: 280px; 
   margin: 0 auto;
 }
 
 .zine-swiper .swiper-slide img {
   width: 100%;
-  max-width: 280px;  /* Now it can't exceed swiper size */
+  max-width: 280px;  
   height: auto;
   max-height: 360px;
   object-fit: contain;
@@ -495,8 +480,6 @@ margin-bottom: 12px;
 }
 
 
-
-/* Base styles for all zine nav arrows */
 .zine-swiper-1 .swiper-button-next,
 .zine-swiper-2 .swiper-button-next,
 .zine-swiper-3 .swiper-button-next,
@@ -515,7 +498,7 @@ z-index: 10;
 }
 
 
-/* Custom left arrows */
+
 .zine-swiper-1 .swiper-button-prev,
 .zine-swiper-2 .swiper-button-prev,
 .zine-swiper-3 .swiper-button-prev {
@@ -524,20 +507,12 @@ left: -100px;
 }
 
 
-/* Custom right arrows */
 .zine-swiper-1 .swiper-button-next,
 .zine-swiper-2 .swiper-button-next,
 .zine-swiper-3 .swiper-button-next {
 background-image: url('arrow-left.png');
 right: -100px;
 }
-
-
-/* Allow swiper-wrapper overflow to show arrows outside */
-.swiper-wrapper {
-overflow: visible;
-}
-
 
 .swiper-slide img {
   width: 100%;
@@ -572,11 +547,11 @@ border-radius: 10px;
 
 .swiper-wrapper-container {
   position: relative;
-  overflow: visible; /* ✅ allows arrows to show */
+  overflow: visible;
 }
 
 .swiper.zine-swiper {
-  overflow: hidden; /* ✅ only hides inner slides, not arrows */
+  overflow: hidden;
 }
 
 body {
@@ -586,18 +561,6 @@ body {
 img {
 cursor: url('path-to-image.png'), auto;
 }
-.zine-block {
-margin-bottom: 60px;
-text-align: center;
-}
-
-
-.zine-block h3 {
-color: #ff69b4;
-font-size: 24px;
-margin-bottom: 12px;
-}
-
 
 .zine-swiper {
 width: 100%;
@@ -610,14 +573,13 @@ border-radius: 12px;
 }
 
 
-/* Hide default arrows */
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
 display: none;
 }
 
 
-/* Base styles for all zine nav arrows */
 .zine-swiper-1 .swiper-button-next,
 .zine-swiper-2 .swiper-button-next,
 .zine-swiper-3 .swiper-button-next,
@@ -636,7 +598,6 @@ z-index: 10;
 }
 
 
-/* Custom left arrows */
 .zine-swiper-1 .swiper-button-prev,
 .zine-swiper-2 .swiper-button-prev,
 .zine-swiper-3 .swiper-button-prev {
@@ -645,7 +606,6 @@ left: -100px;
 }
 
 
-/* Custom right arrows */
 .zine-swiper-1 .swiper-button-next,
 .zine-swiper-2 .swiper-button-next,
 .zine-swiper-3 .swiper-button-next {
@@ -654,7 +614,6 @@ right: -100px;
 }
 
 
-/* Swiper container styling */
 .swiper {
   position: relative;
   overflow: hidden;
@@ -664,9 +623,6 @@ right: -100px;
 }
 
 
-
-
-/* Allow swiper-wrapper overflow to show arrows outside */
 .swiper-wrapper {
 overflow: visible;
 }
@@ -726,11 +682,11 @@ overflow: visible !important;
   }
 }
 
-  /* Swiper arrows styling on mobile */
+
   .swiper-button-prev,
   .swiper-button-next {
     top: 50%;
-    transform: translateY(-50%) scale(0.5); /* Combine transform properties */
+    transform: translateY(-50%) scale(0.5); 
     width: 60px; 
     height: 40px;
     background-size: contain;
@@ -757,7 +713,7 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
-/* Ceramic container */
+
 .ceramic-container {
   display: grid;
   grid-template-columns: repeat(3, 350px); 
@@ -773,22 +729,21 @@ html, body {
   position: relative;
 }
 
-/* Styling for images */
 .ceramic-img {
-  width: 100%; /* Ensure image fills the container */
-  height: 100%; /* Ensures it fills the full item height */
-  object-fit: contain; /* Maintain aspect ratio */
-  visibility: hidden; /* Hide images by default */
-    transition: visibility 0s ease; /* Smooth transition for visibility */
+  width: 100%; 
+  height: 100%;
+  object-fit: contain;
+  visibility: hidden;
+    transition: visibility 0s ease; 
 position: absolute;
 }
 
-/* Make the first image visible */
+
 .ceramic-img.img1 {
   visibility: visible;
 }
 
-/* Hover effect: hide the first image and show the second image */
+
 .ceramic-item:hover .ceramic-img.img1 {
   visibility: hidden;
 }
@@ -812,7 +767,7 @@ position: absolute;
   }
 
   .ceramic-item {
-    flex: 1 1 100%;  /* full-width items on tiny screens */
+    flex: 1 1 100%;  
     max-width: none;
   }
 
