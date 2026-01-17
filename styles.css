@@ -25,6 +25,7 @@ body {
   background-color: #fce6f9;
   background-image: radial-gradient(#fcdff9 8%, transparent 8%);
   background-size: 25px 25px;
+    background-position: center; 
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
