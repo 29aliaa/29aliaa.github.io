@@ -12,6 +12,7 @@ flex-wrap: nowrap;
 
 }
 
+
 .left-panel {
   width: 40%;
   padding: 20px;
@@ -46,7 +47,7 @@ flex-wrap: nowrap;
 }
 
 .about-img {
-  width: 65%;
+  width: 85%;
   height: auto;
   display: block; 
   float: left;      
