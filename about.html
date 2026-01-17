@@ -24,8 +24,8 @@
   <div class="about-container">
     
     <div class="left-panel">
-      <img src="about-me.webp" alt="Header Decoration" class="about-img" />
-      <img src="aliaserene2.webp" alt="Alia Serene Portrait" class="profile-img"  />
+      <img src="about/about-me.webp" alt="Header Decoration" class="about-img" />
+      <img src="about/aliaserene2.webp" alt="Alia Serene Portrait" class="profile-img"  />
 
 
 
@@ -38,11 +38,11 @@
     </div>
 
   <div class="collage-panel">
-  <img src="clickme.webp" alt="" class="corner-png" />
+  <img src="about/clickme.webp" alt="" class="corner-png" />
 
     <div class="envelope">
   <img
-    src="envelope-closed.webp" alt="Closed envelope"  id="envelopeImg"  onclick="openEnvelope()" />
+    src="about/envelope-closed.webp" alt="Closed envelope"  id="envelopeImg"  onclick="openEnvelope()" />
   </div>
 </div>
 
@@ -104,10 +104,10 @@
     const img = document.getElementById("envelopeImg");
 
     if (img.classList.contains("open")) {
-      img.src = "envelope-closed.webp";
+      img.src = "about/envelope-closed.webp";
       img.classList.remove("open");
     } else {
-      img.src = "envelope-opened.webp";
+      img.src = "about/envelope-opened.webp";
       img.classList.add("open");
     }
   }

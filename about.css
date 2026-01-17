@@ -47,7 +47,7 @@ flex-wrap: nowrap;
 }
 
 .about-img {
-  width: 85%;
+  width: 70%;
   height: auto;
   display: block; 
   float: left;      
@@ -167,7 +167,7 @@ body * {
   position: relative;
   padding: 0;
     background-color: #fce6f9;
-  background-image: url('flowerz.webp'); 
+  background-image: url('about/flowerz.webp'); 
   background-size: cover;
     background-repeat: repeat-x;
   background-position: center;
@@ -176,7 +176,7 @@ body * {
 
 .corner-png {
   position: absolute; 
-  bottom: 30px;    
+  bottom: 60px;    
   right: 70px;           
   max-width: 250px;  
   height: auto;       
@@ -207,11 +207,6 @@ body * {
     background-size: contain;
     background-position: center top;
     border-radius: 0; /* Optional: remove rounded corners on mobile */
-  }
-
-  .about-img {
-    width: 80%;
-    margin-bottom: 20px;
   }
 
   .profile-img {
